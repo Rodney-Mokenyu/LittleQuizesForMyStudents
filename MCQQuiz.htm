@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+      <!-- Bootstrap CSS (Latest version) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    main{
+        counter-reset: question;
+    }
+    .row p::before{
+        counter-increment: question;
+        content: "Question" counter(question) ".";
+    }
+
+    #score{
+        margin-top: 1rem;
+        border-radius: 50%;
+        background-color: blueviolet;
+        width: 150px;
+        height: 150px;
+        font-size: fit-content;
+        align-content: center;
+        padding: 10px;
+        display: none;
+        font-size: clamp(9px, 5vw, 12px);
+    }
+    #submitButton:hover {
+  background-color: green;
+  color: white;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>ANswer all questions </h1>
+    </header>
+    <main class="container-fluid">
+        <div class="row align-items-stretch bg-secondary text-white mb-3">
+            <p id="q1" aria-label="Question 1: What is the process by which plants make their own food?">
+                What is the process by which plants make their own food?
+            </p>
+            <label for="A1" aria-label="Answer A: Respiration">
+                A <input type="radio" name="q1" id="A1" value="A" class="form-check-input"> Respiration
+            </label>
+            <label for="B1" aria-label="Answer B: Photosynthesis">
+                B <input type="radio" name="q1" id="B1" value="B"> Photosynthesis
+            </label>
+            <label for="C1" aria-label="Answer C: Digestion">
+                C <input type="radio" name="q1" id="C1" value="C"> Digestion
+            </label>
+        </div>
+    
+        <div class="row align-items-stretch bg-success text-white mb-3">
+            <p id="q2" aria-label="Question 2: Which part of the plant absorbs water from the soil?">
+                Which part of the plant absorbs water from the soil?
+            </p>
+            <label for="A2" aria-label="Answer A: Roots">
+                A <input type="radio" name="q2" id="A2" value="A"> Roots
+            </label>
+            <label for="B2" aria-label="Answer B: Leaves">
+                B <input type="radio" name="q2" id="B2" value="B"> Leaves
+            </label>
+            <label for="C2" aria-label="Answer C: Stem">
+                C <input type="radio" name="q2" id="C2" value="C"> Stem
+            </label>
+        </div>
+    
+        <!-- Start of additional questions -->
+        <div class="row align-items-stretch bg-primary text-white mb-3">
+            <p id="q3" aria-label="Question 3: What do animals need to breathe?">
+                What do animals need to breathe?
+            </p>
+            <label for="A3" aria-label="Answer A: Carbon dioxide">
+                A <input type="radio" name="q3" id="A3" value="A"> Carbon dioxide
+            </label>
+            <label for="B3" aria-label="Answer B: Oxygen">
+                B <input type="radio" name="q3" id="B3" value="B"> Oxygen
+            </label>
+            <label for="C3" aria-label="Answer C: Water">
+                C <input type="radio" name="q3" id="C3" value="C"> Water
+            </label>
+        </div>
+    
+        <div class="row align-items-stretch bg-success text-white mb-3">
+            <p id="q4" aria-label="Question 4: Which planet is known as the Red Planet?">
+                Which planet is known as the Red Planet?
+            </p>
+            <label for="A4" aria-label="Answer A: Mars">
+                A <input type="radio" name="q4" id="A4" value="A"> Mars
+            </label>
+            <label for="B4" aria-label="Answer B: Venus">
+                B <input type="radio" name="q4" id="B4" value="B"> Venus
+            </label>
+            <label for="C4" aria-label="Answer C: Jupiter">
+                C <input type="radio" name="q4" id="C4" value="C"> Jupiter
+            </label>
+        </div>
+    
+        <div class="row align-items-stretch bg-secondary text-white mb-3">
+            <p id="q5" aria-label="Question 5: What is the center of our solar system?">
+                What is the center of our solar system?
+            </p>
+            <label for="A5" aria-label="Answer A: The Sun">
+                A <input type="radio" name="q5" id="A5" value="A"> The Sun
+            </label>
+            <label for="B5" aria-label="Answer B: The Moon">
+                B <input type="radio" name="q5" id="B5" value="B"> The Moon
+            </label>
+            <label for="C5" aria-label="Answer C: Earth">
+                C <input type="radio" name="q5" id="C5" value="C"> Earth
+            </label>
+        </div>
+    
+        <div class="row align-items-stretch bg-primary text-white mb-3">
+            <p id="q6" aria-label="Question 6: Which planet is the largest in our solar system?">
+                Which planet is the largest in our solar system?
+            </p>
+            <label for="A6" aria-label="Answer A: Saturn">
+                A <input type="radio" name="q6" id="A6" value="A"> Saturn
+            </label>
+            <label for="B6" aria-label="Answer B: Jupiter">
+                B <input type="radio" name="q6" id="B6" value="B"> Jupiter
+            </label>
+            <label for="C6" aria-label="Answer C: Neptune">
+                C <input type="radio" name="q6" id="C6" value="C"> Neptune
+            </label>
+        </div>
+    
+        <div class="row align-items-stretch bg-success text-white mb-3">
+            <p id="q7" aria-label="Question 7: What are the three states of matter?">
+                What are the three states of matter?
+            </p>
+            <label for="A7" aria-label="Answer A: Solid, Liquid, Gas">
+                A <input type="radio" name="q7" id="A7" value="A"> Solid, Liquid, Gas
+            </label>
+            <label for="B7" aria-label="Answer B: Water, Ice, Steam">
+                B <input type="radio" name="q7" id="B7" value="B"> Water, Ice, Steam
+            </label>
+            <label for="C7" aria-label="Answer C: Earth, Water, Air">
+                C <input type="radio" name="q7" id="C7" value="C"> Earth, Water, Air
+            </label>
+        </div>
+    
+        <div class="row align-items-stretch bg-secondary text-white mb-3">
+            <p id="q8" aria-label="Question 8: What state of matter has a definite shape?">
+                What state of matter has a definite shape?
+            </p>
+            <label for="A8" aria-label="Answer A: Liquid">
+                A <input type="radio" name="q8" id="A8" value="A"> Liquid
+            </label>
+            <label for="B8" aria-label="Answer B: Solid">
+                B <input type="radio" name="q8" id="B8" value="B"> Solid
+            </label>
+            <label for="C8" aria-label="Answer C: Gas">
+                C <input type="radio" name="q8" id="C8" value="C"> Gas
+            </label>
+        </div>
+    
+        <div class="row align-items-stretch bg-primary text-white mb-3">
+            <p id="q9" aria-label="Question 9: Which of these is an example of a gas?">
+                Which of these is an example of a gas?
+            </p>
+            <label for="A9" aria-label="Answer A: Ice">
+                A <input type="radio" name="q9" id="A9" value="A"> Ice
+            </label>
+            <label for="B9" aria-label="Answer B: Water Vapor">
+                B <input type="radio" name="q9" id="B9" value="B"> Water Vapor
+            </label>
+            <label for="C9" aria-label="Answer C: Sand">
+                C <input type="radio" name="q9" id="C9" value="C"> Sand
+            </label>
+        </div>
+        <!-- End of additional questions -->
+    
+        <div class="row align-items-stretch bg-primary text-white mb-3">
+            <p id="q10" aria-label="Question 10: What happens when water changes from a liquid to a solid?">
+                What happens when water changes from a liquid to a solid?
+            </p>
+            <label for="A10" aria-label="Answer A: Freezing">
+                A <input type="radio" name="q10" id="A10" value="A"> Freezing
+            </label>
+            <label for="B10" aria-label="Answer B: Melting">
+                B <input type="radio" name="q10" id="B10" value="B"> Melting
+            </label>
+            <label for="C10" aria-label="Answer C: Boiling">
+                C <input type="radio" name="q10" id="C10" value="C">Boiling
+            </label>
+        </div>
+        <div id="score"></div>
+        <button class="btn btn-primary">Summit</button>
+    </main>
+
+    
+
+    <script>
+        
+        function checker(){  
+        let score = 0;      
+        let correctAnswers = ['B', 'A', 'B', 'A', 'A', 'B', 'A', 'B', 'B', 'A'];
+
+        let studentAnswers = [];
+
+        // collecting the chosen answers
+        for(let i = 0; i<correctAnswers.length; i++){
+            let chosenOption = document.querySelector(`input[name="q${i+1}"]:checked`);
+
+        if(chosenOption){
+            studentAnswers.push(chosenOption.value)
+        } else{
+            studentAnswers.push(null);
+            alert(`You have not answered question ${i+1}`);
+
+        }
+
+        }
+        //calculating the score
+        
+        for(let i=0; i<correctAnswers.length; i++){
+            if(correctAnswers[i]==studentAnswers[i]){
+                score++;
+            }
+        }
+
+        let publishScore = document.getElementById("score");
+        publishScore.innerHTML = `<b>Your final score is: ${score}/${correctAnswers.length}</b>`;
+        publishScore.style.display = 'block'
+    
+
+    }
+
+        //Event listener to the submit button
+    let him = document.getElementById("submitButton");
+    him.addEventListener('click', function () {
+        checker(); 
+        him.style.backgroundColor = 'green';
+        
+    });
+
+   
+   
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+    main{
+        counter-reset: question;
+    }
+    .row p::before{
+        counter-increment: question;
+        content: "Question" counter(question) ".";
+    }
+
+    #score{
+        margin-top: 1rem;
+        border-radius: 50%;
+        background-color: blueviolet;
+        width: 150px;
+        height: 150px;
+        font-size: fit-content;
+        align-content: center;
+        padding: 10px;
+        display: none;
+        font-size: clamp(9px, 5vw, 12px);
+    }
+    #submitButton:hover {
+  background-color: green;
+  color: white;
+}
+
