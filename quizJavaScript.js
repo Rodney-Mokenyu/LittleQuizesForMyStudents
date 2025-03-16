@@ -1,4 +1,8 @@
 
+
+
+
+
         function checker(){  
         let score = 0;      
         let correctAnswers = ['B', 'A', 'B', 'A', 'A', 'B', 'A', 'B', 'B', 'A'];
@@ -9,13 +13,16 @@
         for(let i = 0; i<correctAnswers.length; i++){
             let chosenOption = document.querySelector(`input[name="q${i+1}"]:checked`);
 
+            let po = document.getElementsByClassName("row")[i];
         if(chosenOption){
-            studentAnswers.push(chosenOption.value)
-        } else{
-            studentAnswers.push(null);
-            alert(`You have not answered question ${i+1}`);
+            studentAnswers.push(chosenOption.value);
+            po.classList.add("highlight");
+            } else{
+                studentAnswers.push(null);
+                po.classList.add("highlight");
+                
 
-        }
+            }
 
         }
         //calculating the score
@@ -41,6 +48,6 @@
         
     });
 
-   
+
    
     

@@ -4,35 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-      <!-- Bootstrap CSS (Latest version) -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-    main{
-        counter-reset: question;
-    }
-    .row p::before{
-        counter-increment: question;
-        content: "Question" counter(question) ".";
-    }
+      <!-- Bootstrap CSS (Latest version) and Javascript -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      
+<link rel="stylesheet" href="quizStyles.css">
 
-    #score{
-        margin-top: 1rem;
-        border-radius: 50%;
-        background-color: blueviolet;
-        width: 150px;
-        height: 150px;
-        font-size: fit-content;
-        align-content: center;
-        padding: 10px;
-        display: none;
-        font-size: clamp(9px, 5vw, 12px);
-    }
-    #submitButton:hover {
-  background-color: green;
-  color: white;
-}
 
-</style>
 </head>
 <body>
     <header>
@@ -191,57 +169,13 @@
             </label>
         </div>
         <div id="score"></div>
-        <button class="btn btn-primary">Summit</button>
+
+       
+        <button type="button" class="btn btn-primary" id="submitButton">button</button>
     </main>
 
     
-
-    <script>
-        
-        function checker(){  
-        let score = 0;      
-        let correctAnswers = ['B', 'A', 'B', 'A', 'A', 'B', 'A', 'B', 'B', 'A'];
-
-        let studentAnswers = [];
-
-        // collecting the chosen answers
-        for(let i = 0; i<correctAnswers.length; i++){
-            let chosenOption = document.querySelector(`input[name="q${i+1}"]:checked`);
-
-        if(chosenOption){
-            studentAnswers.push(chosenOption.value)
-        } else{
-            studentAnswers.push(null);
-            alert(`You have not answered question ${i+1}`);
-
-        }
-
-        }
-        //calculating the score
-        
-        for(let i=0; i<correctAnswers.length; i++){
-            if(correctAnswers[i]==studentAnswers[i]){
-                score++;
-            }
-        }
-
-        let publishScore = document.getElementById("score");
-        publishScore.innerHTML = `<b>Your final score is: ${score}/${correctAnswers.length}</b>`;
-        publishScore.style.display = 'block'
+    <script src="quizJavaScript.js"></script>
     
-
-    }
-
-        //Event listener to the submit button
-    let him = document.getElementById("submitButton");
-    him.addEventListener('click', function () {
-        checker(); 
-        him.style.backgroundColor = 'green';
-        
-    });
-
-   
-   
-    </script>
 </body>
 </html>

@@ -23,4 +23,15 @@
   background-color: green;
   color: white;
 }
+p{
+    background-color: rgb(79, 76, 248);
+    color: bisque;
+    padding: 5px;
+    font-weight: 400;
+}
+.highlight {
+  
+    background-color: rgb(244, 15, 7) !important; /* Optional: light background color for emphasis */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
 
